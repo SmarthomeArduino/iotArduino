@@ -1,3 +1,5 @@
+#include <Arduino.h>
+#line 1 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
 #include <SoftwareSerial.h>
 #include <Servo.h>
 #include <Wire.h>
@@ -23,6 +25,15 @@ float temperature = 0;
 float humidity = 0;
 
 
+#line 26 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
+void setup();
+#line 37 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
+void loop();
+#line 138 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
+void setToggle(int PIN, byte& stat);
+#line 150 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
+void moveBlind(int angle);
+#line 26 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
 void setup() {
   BTSerial.begin(9600);
   dht.begin();
@@ -153,3 +164,4 @@ void moveBlind(int angle) {
   delay(300);
   myservo.detach();
 }
+

@@ -1,0 +1,97 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\standard"
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\iotArdunio.ino.cpp",
+    "Include": "SoftwareSerial.h",
+    "Includepath": "C:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\iotArdunio.ino.cpp",
+    "Include": "Servo.h",
+    "Includepath": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\iotArdunio.ino.cpp",
+    "Include": "Wire.h",
+    "Includepath": "C:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src"
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\iotArdunio.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\DHT.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\LiquidCrystal_I2C.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src\\SoftwareSerial.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\avr\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\mbed\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\megaavr\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\nrf52\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\renesas\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\sam\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\samd\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\stm32f4\\Servo.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src\\Wire.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src\\utility\\twi.c",
+    "Include": "",
+    "Includepath": null
+  }
+]
