@@ -59,11 +59,11 @@
    "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src",
    "-IC:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src",
    "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src",
-   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\iotArdunio.ino.cpp",
+   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\LiquidCrystal_I2C.cpp",
    "-o",
-   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\iotArdunio.ino.cpp.o"
+   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\LiquidCrystal_I2C.cpp.o"
   ],
-  "file": "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\iotArdunio.ino.cpp"
+  "file": "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\LiquidCrystal_I2C.cpp"
  },
  {
   "directory": "c:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio",
@@ -92,11 +92,11 @@
    "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src",
    "-IC:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src",
    "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src",
-   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\LiquidCrystal_I2C.cpp",
+   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\iotArdunio.ino.cpp",
    "-o",
-   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\LiquidCrystal_I2C.cpp.o"
+   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\iotArdunio.ino.cpp.o"
   ],
-  "file": "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\LiquidCrystal_I2C.cpp"
+  "file": "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\sketch\\iotArdunio.ino.cpp"
  },
  {
   "directory": "c:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio",
@@ -191,11 +191,11 @@
    "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src",
    "-IC:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src",
    "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src",
-   "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\stm32f4\\Servo.cpp",
+   "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\megaavr\\Servo.cpp",
    "-o",
-   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\libraries\\Servo\\stm32f4\\Servo.cpp.o"
+   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\libraries\\Servo\\megaavr\\Servo.cpp.o"
   ],
-  "file": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\stm32f4\\Servo.cpp"
+  "file": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\megaavr\\Servo.cpp"
  },
  {
   "directory": "c:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio",
@@ -257,44 +257,11 @@
    "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src",
    "-IC:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src",
    "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src",
-   "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\renesas\\Servo.cpp",
+   "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\stm32f4\\Servo.cpp",
    "-o",
-   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\libraries\\Servo\\renesas\\Servo.cpp.o"
+   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\libraries\\Servo\\stm32f4\\Servo.cpp.o"
   ],
-  "file": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\renesas\\Servo.cpp"
- },
- {
-  "directory": "c:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio",
-  "arguments": [
-   "C:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\avr-gcc\\7.3.0-atmel3.6.1-arduino7/bin/avr-g++",
-   "-c",
-   "-g",
-   "-Os",
-   "-w",
-   "-std=gnu++11",
-   "-fpermissive",
-   "-fno-exceptions",
-   "-ffunction-sections",
-   "-fdata-sections",
-   "-fno-threadsafe-statics",
-   "-Wno-error=narrowing",
-   "-MMD",
-   "-flto",
-   "-mmcu=atmega328p",
-   "-DF_CPU=16000000L",
-   "-DARDUINO=10607",
-   "-DARDUINO_AVR_UNO",
-   "-DARDUINO_ARCH_AVR",
-   "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\cores\\arduino",
-   "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\variants\\standard",
-   "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src",
-   "-IC:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src",
-   "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src",
-   "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\megaavr\\Servo.cpp",
-   "-o",
-   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\libraries\\Servo\\megaavr\\Servo.cpp.o"
-  ],
-  "file": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\megaavr\\Servo.cpp"
+  "file": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\stm32f4\\Servo.cpp"
  },
  {
   "directory": "c:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio",
@@ -356,11 +323,11 @@
    "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src",
    "-IC:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src",
    "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src",
-   "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\sam\\Servo.cpp",
+   "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\samd\\Servo.cpp",
    "-o",
-   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\libraries\\Servo\\sam\\Servo.cpp.o"
+   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\libraries\\Servo\\samd\\Servo.cpp.o"
   ],
-  "file": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\sam\\Servo.cpp"
+  "file": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\samd\\Servo.cpp"
  },
  {
   "directory": "c:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio",
@@ -389,11 +356,11 @@
    "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\SoftwareSerial\\src",
    "-IC:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src",
    "-IC:\\Users\\sktjs\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.6\\libraries\\Wire\\src",
-   "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\samd\\Servo.cpp",
+   "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\renesas\\Servo.cpp",
    "-o",
-   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\libraries\\Servo\\samd\\Servo.cpp.o"
+   "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\build\\libraries\\Servo\\renesas\\Servo.cpp.o"
   ],
-  "file": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\samd\\Servo.cpp"
+  "file": "C:\\Users\\sktjs\\OneDrive\\Documents\\Arduino\\libraries\\Servo\\src\\renesas\\Servo.cpp"
  },
  {
   "directory": "c:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio",

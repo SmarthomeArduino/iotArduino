@@ -14,6 +14,7 @@ Servo myservo;
 
 unsigned long previousMillis = 0;
 
+
 boolean blind = OFF;
 boolean TV = OFF;
 
@@ -39,37 +40,46 @@ void loop() {
   if (BTSerial.available()) {
     char input = BTSerial.read();
 
+    char receivedChar = Serial.read(); // 시리얼로부터 데이터 읽기
+    Serial.print("Received: ");
+    Serial.println(receivedChar);
+
     switch (input) {
-      case 'a': //RGB LED Red
+      case 'r': //RGB LED Red
         setToggle(ledR1, sensor[0]);
         break;
 
-      case 'b': //RGB LED Green
+      case 'g1': //RGB LED Green
         setToggle(ledG1, sensor[1]);
         break;
 
-      case 'c': //RGB LED Blue
+      case 'b1': //RGB LED Blue
         setToggle(ledB1, sensor[2]);
         break;
 
-      case 'd': //RGB LED1 Red
+      case 'r2': //RGB LED1 Red
         setToggle(ledR2, sensor[3]);
+        BTSerial.print("8번 핀 상태: ");
+        BTSerial.println(digitalRead(ledR1));
+
+        BTSerial.print("11번 핀 상태: ");
+        BTSerial.println(digitalRead(ledR2));
+
         break;
 
-      case 'e': //RGB LED1 Green
+      case 'g2': //RGB LED1 Green
         setToggle(ledG2, sensor[4]);
         break;
 
-      case 'f': //RGB LED1 Blue
+      case 'b2': //RGB LED1 Blue
         setToggle(ledB2, sensor[5]);
         break;
 
-      case 'g': //aircon LED
+      case 'aircon': //aircon LED
         setToggle(led, sensor[6]);
         break;
     }
   }
-
 
   //================2초마다 온습도 측정================//
   unsigned long currentMillis = millis();
@@ -78,11 +88,51 @@ void loop() {
     temperature = dht.readTemperature();
     humidity = dht.readHumidity();
 
-    if (BTSerial.available()) {
-      BTSerial.print(temperature);
-      BTSerial.print(humidity);
 
-    }
+    // if (BTSerial.available()) {
+      // BTSerial.print("온도: ");
+      // BTSerial.println(temperature ,humidity);
+      // BTSerial.println(analogRead(cdsPin) ,analogRead(IRPin));
+
+
+      // BTSerial.print("온도: ");
+      // BTSerial.println(temperature);
+      // BTSerial.print("습도: ");
+      // BTSerial.println(humidity);
+
+      // BTSerial.print("cds: ");
+      // BTSerial.println(analogRead(cdsPin));
+
+      // BTSerial.print("IR: ");
+      // BTSerial.println(analogRead(IRPin));
+
+/*
+
+BTSerial.print("temp: ");
+
+BTSerial.print(temperature,1);
+
+BTSerial.print(",humi: ");
+
+BTSerial.print(humidity,0);
+
+BTSerial.println();  // 개행 문자로 데이터를 종료
+
+BTSerial.print("cds: ");
+
+BTSerial.print(analogRead(cdsPin));
+
+BTSerial.print(", IR: ");
+
+BTSerial.print(analogRead(IRPin));
+
+BTSerial.println();  // 개행 문자로 데이터를 종료
+
+
+
+*/
+# 131 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
+    // }
 
     if (TV == ON) { //TV가 ON상태이면 온습도 값 갱신
       lcd.setCursor(0, 0);
@@ -94,9 +144,6 @@ void loop() {
     }
   }
   //===================================================//
-
-
-
 
 
   //================블라인드 제어================//
