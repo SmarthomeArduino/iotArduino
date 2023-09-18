@@ -1,4 +1,4 @@
-#line 1 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\setting.h"
+#line 1 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\header\\setting.h"
 /* "setting.h"
  * 스마트홈에 들어가는 센서, 모듈, LED의 핀 번호, 기준값, 수치를 세팅하는 헤더파일입니다. 
  * 

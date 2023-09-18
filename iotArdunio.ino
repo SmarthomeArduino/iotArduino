@@ -1,9 +1,9 @@
 #include <SoftwareSerial.h>
 #include <Servo.h>
 #include <Wire.h>
-#include "LiquidCrystal_I2C.h"
-#include "DHT.h"
-#include "melody.h"
+#include "./header/LiquidCrystal_I2C.h"
+#include "./header/DHT.h"
+#include "./header/melody.h"
 
 
 DHT dht(dhtPin, DHT11);
@@ -46,34 +46,38 @@ void loop() {
     switch (input) {
       case 'r':                          //RGB LED Red
         setToggle(ledR1, sensor[0]);
-        break;
-
-      case 'g1':                          //RGB LED Green
-        setToggle(ledG1, sensor[1]);
-        break;
-
-      case 'b1':                          //RGB LED Blue
-        setToggle(ledB1, sensor[2]);
-        break;
-
-      case 'r2':                          //RGB LED1 Red
-
-        // led 제어 상태 확인 테스트
-        setToggle(ledR2, sensor[3]);
         BTSerial.print("8번 핀 상태: ");
         BTSerial.println(digitalRead(ledR1));
+        break;
 
+      case 'g':                          //RGB LED Green
+        setToggle(ledG1, sensor[1]);
+        BTSerial.print("9번 핀 상태: ");
+        BTSerial.println(digitalRead(ledG1));
+        break;
+
+      case 'b':                          //RGB LED Blue
+        setToggle(ledB1, sensor[2]);
+        BTSerial.print("10번 핀 상태: ");
+        BTSerial.println(digitalRead(ledB1));
+        break;
+
+      case 'R':                          //RGB LED1 Red
+        setToggle(ledR2, sensor[3]);
         BTSerial.print("11번 핀 상태: ");
         BTSerial.println(digitalRead(ledR2));
-
         break;
 
-      case 'g2':                          //RGB LED1 Green
+      case 'G':                          //RGB LED1 Green
         setToggle(ledG2, sensor[4]);
+        BTSerial.print("12번 핀 상태: ");
+        BTSerial.println(digitalRead(ledG2));
         break;
 
-      case 'b2':                          //RGB LED1 Blue
+      case 'B':                          //RGB LED1 Blue
         setToggle(ledB2, sensor[5]);
+        BTSerial.print("13번 핀 상태: ");
+        BTSerial.println(digitalRead(ledB2));
         break;
 
       case 'aircon':                          //aircon LED
@@ -90,6 +94,7 @@ void loop() {
     humidity = dht.readHumidity();
 
 
+/*
     // 온습도 테스트
     BTSerial.print("temp: ");
     BTSerial.print(temperature,1);
@@ -101,7 +106,7 @@ void loop() {
     BTSerial.print(", IR: ");
     BTSerial.print(analogRead(IRPin));
     BTSerial.println();  // 개행 문자로 데이터를 종료
-
+*/
 
     if (TV == ON) {                                  //TV가 ON상태이면 온습도 값 갱신
       lcd.setCursor(0, 0);

@@ -1,4 +1,4 @@
-#line 1 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\DHT.h"
+#line 1 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\header\\DHT.h"
 /* DHT library
 
 MIT license

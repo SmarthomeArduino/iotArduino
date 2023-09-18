@@ -9,12 +9,14 @@
     <button>블루투스 연결</button>
     <div id="data-container"></div>
     <button id="getDataButton">데이터 받기</button>
-    <button id="R1toggleLedButton">R1토글 버튼</button>
-    <button id="G1toggleLedButton">G1토글 버튼</button>
-    <button id="B1toggleLedButton">B1토글 버튼</button>
-    <button id="R2toggleLedButton">R2토글 버튼</button>
-    <button id="G2toggleLedButton">G2토글 버튼</button>
-    <button id="B2toggleLedButton">B2토글 버튼</button>
+    <div id="ledToggleButtonBox">
+      <button id="R1toggleLedButton">R1토글 버튼</button>
+      <button id="G1toggleLedButton">G1토글 버튼</button>
+      <button id="B1toggleLedButton">B1토글 버튼</button>
+      <button id="R2toggleLedButton">R2토글 버튼</button>
+      <button id="G2toggleLedButton">G2토글 버튼</button>
+      <button id="B2toggleLedButton">B2토글 버튼</button>
+    </div>
 
     <script>
       class PlaybulbCandle {
@@ -97,8 +99,6 @@
 
         async toggleLed(event) {
           console.log("toggleLed...");
-
-          console.log(event.target.id);
           const service = await this.device.gatt.getPrimaryService(
             "6e400001-b5a3-f393-e0a9-e50e24dcca9e"
           );
@@ -108,7 +108,37 @@
           );
 
           // 토글 LED 값을 전송 (a encoding)
-          const value = new TextEncoder().encode("aer");
+
+          let value = "";
+          const selectedButton = event.target.id.substr(0, 2);
+          switch (selectedButton) {
+            case "R1":
+              value = new TextEncoder().encode("r");
+              break;
+
+            case "G1":
+              value = new TextEncoder().encode("g");
+              break;
+
+            case "B1":
+              value = new TextEncoder().encode("b");
+              break;
+
+            case "R2":
+              value = new TextEncoder().encode("R");
+              break;
+
+            case "G2":
+              value = new TextEncoder().encode("G");
+              break;
+
+            case "B2":
+              value = new TextEncoder().encode("B");
+              break;
+
+            default:
+              break;
+          }
           await characteristic.writeValue(value);
         }
 
@@ -140,61 +170,15 @@
         });
 
       document
-        .querySelector("#R1toggleLedButton")
-        .addEventListener("click", async (event) => {
-          try {
-            await playbulbCandle.toggleLed(event);
-          } catch (error) {
-            console.log(error);
-          }
-        });
-
-      document
-        .querySelector("#G1toggleLedButton")
-        .addEventListener("click", async (event) => {
-          try {
-            await playbulbCandle.toggleLed();
-          } catch (error) {
-            console.log(error);
-          }
-        });
-      document
-        .querySelector("#B1toggleLedButton")
-        .addEventListener("click", async (event) => {
-          try {
-            await playbulbCandle.toggleLed();
-          } catch (error) {
-            console.log(error);
-          }
-        });
-
-      document
-        .querySelector("#R2toggleLedButton")
-        .addEventListener("click", async (event) => {
-          try {
-            await playbulbCandle.toggleLed();
-          } catch (error) {
-            console.log(error);
-          }
-        });
-
-      document
-        .querySelector("#G2toggleLedButton")
-        .addEventListener("click", async (event) => {
-          try {
-            await playbulbCandle.toggleLed();
-          } catch (error) {
-            console.log(error);
-          }
-        });
-      document
-        .querySelector("#B2toggleLedButton")
-        .addEventListener("click", async (event) => {
-          try {
-            await playbulbCandle.toggleLed();
-          } catch (error) {
-            console.log(error);
-          }
+        .querySelectorAll("#ledToggleButtonBox button")
+        .forEach((element) => {
+          element.addEventListener("click", async (event) => {
+            try {
+              await playbulbCandle.toggleLed(event);
+            } catch (error) {
+              console.log(error);
+            }
+          });
         });
     </script>
   </body>

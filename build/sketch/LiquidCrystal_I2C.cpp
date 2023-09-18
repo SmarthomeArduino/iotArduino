@@ -1,7 +1,7 @@
 #line 1 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\LiquidCrystal_I2C.cpp"
 // Based on the work by DFRobot
 
-#include "LiquidCrystal_I2C.h"
+#include "./header/LiquidCrystal_I2C.h"
 #include <inttypes.h>
 #if defined(ARDUINO) && ARDUINO >= 100
 

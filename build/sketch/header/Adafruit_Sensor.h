@@ -1,4 +1,4 @@
-#line 1 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\Adafruit_Sensor.h"
+#line 1 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\header\\Adafruit_Sensor.h"
 /*
 * Copyright (C) 2008 The Android Open Source Project
 *

@@ -1,4 +1,4 @@
-#line 1 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\ServoTimers.h"
+#line 1 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\header\\ServoTimers.h"
 /*
   Servo.h - Interrupt driven Servo library for Arduino using 16 bit timers- Version 2
   Copyright (c) 2009 Michael Margolis.  All right reserved.

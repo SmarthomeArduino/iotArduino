@@ -3,9 +3,9 @@
 #include <SoftwareSerial.h>
 #include <Servo.h>
 #include <Wire.h>
-#include "LiquidCrystal_I2C.h"
-#include "DHT.h"
-#include "melody.h"
+#include "./header/LiquidCrystal_I2C.h"
+#include "./header/DHT.h"
+#include "./header/melody.h"
 
 
 DHT dht(dhtPin, DHT11);
@@ -30,9 +30,9 @@ float humidity = 0;
 void setup();
 #line 38 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
 void loop();
-#line 182 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
+#line 160 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
 void setToggle(int PIN, byte& stat);
-#line 194 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
+#line 172 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
 void moveBlind(int angle);
 #line 27 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
 void setup() {
@@ -57,32 +57,38 @@ void loop() {
     switch (input) {
       case 'r':                          //RGB LED Red
         setToggle(ledR1, sensor[0]);
-        break;
-
-      case 'g1':                          //RGB LED Green
-        setToggle(ledG1, sensor[1]);
-        break;
-
-      case 'b1':                          //RGB LED Blue
-        setToggle(ledB1, sensor[2]);
-        break;
-
-      case 'r2':                          //RGB LED1 Red
-        setToggle(ledR2, sensor[3]);
         BTSerial.print("8번 핀 상태: ");
         BTSerial.println(digitalRead(ledR1));
+        break;
 
+      case 'g':                          //RGB LED Green
+        setToggle(ledG1, sensor[1]);
+        BTSerial.print("9번 핀 상태: ");
+        BTSerial.println(digitalRead(ledG1));
+        break;
+
+      case 'b':                          //RGB LED Blue
+        setToggle(ledB1, sensor[2]);
+        BTSerial.print("10번 핀 상태: ");
+        BTSerial.println(digitalRead(ledB1));
+        break;
+
+      case 'R':                          //RGB LED1 Red
+        setToggle(ledR2, sensor[3]);
         BTSerial.print("11번 핀 상태: ");
         BTSerial.println(digitalRead(ledR2));
-
         break;
 
-      case 'g2':                          //RGB LED1 Green
+      case 'G':                          //RGB LED1 Green
         setToggle(ledG2, sensor[4]);
+        BTSerial.print("12번 핀 상태: ");
+        BTSerial.println(digitalRead(ledG2));
         break;
 
-      case 'b2':                          //RGB LED1 Blue
+      case 'B':                          //RGB LED1 Blue
         setToggle(ledB2, sensor[5]);
+        BTSerial.print("13번 핀 상태: ");
+        BTSerial.println(digitalRead(ledB2));
         break;
 
       case 'aircon':                          //aircon LED
@@ -99,47 +105,19 @@ void loop() {
     humidity = dht.readHumidity();
 
 
-    // if (BTSerial.available()) {
-      // BTSerial.print("온도: ");
-      // BTSerial.println(temperature ,humidity);
-      // BTSerial.println(analogRead(cdsPin) ,analogRead(IRPin));
-
-
-      // BTSerial.print("온도: ");
-      // BTSerial.println(temperature);
-      // BTSerial.print("습도: ");
-      // BTSerial.println(humidity);
-
-      // BTSerial.print("cds: ");
-      // BTSerial.println(analogRead(cdsPin));
-
-      // BTSerial.print("IR: ");
-      // BTSerial.println(analogRead(IRPin));
-
 /*
-BTSerial.print("temp: ");
-BTSerial.print(temperature,1);
-BTSerial.print(",humi: ");
-BTSerial.print(humidity,0);
-BTSerial.println();  // 개행 문자로 데이터를 종료
-BTSerial.print("cds: ");
-BTSerial.print(analogRead(cdsPin));
-BTSerial.print(", IR: ");
-BTSerial.print(analogRead(IRPin));
-BTSerial.println();  // 개행 문자로 데이터를 종료
-
+    // 온습도 테스트
+    BTSerial.print("temp: ");
+    BTSerial.print(temperature,1);
+    BTSerial.print(",humi: ");
+    BTSerial.print(humidity,0);
+    BTSerial.println();  // 개행 문자로 데이터를 종료
+    BTSerial.print("cds: ");
+    BTSerial.print(analogRead(cdsPin));
+    BTSerial.print(", IR: ");
+    BTSerial.print(analogRead(IRPin));
+    BTSerial.println();  // 개행 문자로 데이터를 종료
 */
-
-        
-
-
-
-
-
-
-        
-
-    // }
 
     if (TV == ON) {                                  //TV가 ON상태이면 온습도 값 갱신
       lcd.setCursor(0, 0);

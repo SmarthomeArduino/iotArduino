@@ -1,6 +1,6 @@
 C:\Users\sktjs\OneDrive\πŸ≈¡\ »≠∏È\iotArdunio\build\sketch\DHT.cpp.o: \
  C:\Users\sktjs\OneDrive\πŸ≈¡\ »≠∏È\iotArdunio\build\sketch\DHT.cpp \
- C:\Users\sktjs\OneDrive\πŸ≈¡\ »≠∏È\iotArdunio\build\sketch\DHT.h \
+ c:\users\sktjs\onedrive\πŸ≈¡\ »≠∏È\iotardunio\build\sketch\header\dht.h \
  C:\Users\sktjs\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/Arduino.h \
  C:\Users\sktjs\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/binary.h \
  C:\Users\sktjs\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/WCharacter.h \

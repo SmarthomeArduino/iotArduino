@@ -1,6 +1,6 @@
 C:\Users\sktjs\OneDrive\πŸ≈¡\ »≠∏È\iotArdunio\build\sketch\LiquidCrystal_I2C.cpp.o: \
  C:\Users\sktjs\OneDrive\πŸ≈¡\ »≠∏È\iotArdunio\build\sketch\LiquidCrystal_I2C.cpp \
- C:\Users\sktjs\OneDrive\πŸ≈¡\ »≠∏È\iotArdunio\build\sketch\LiquidCrystal_I2C.h \
+ c:\users\sktjs\onedrive\πŸ≈¡\ »≠∏È\iotardunio\build\sketch\header\liquidcrystal_i2c.h \
  C:\Users\sktjs\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/Print.h \
  C:\Users\sktjs\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/WString.h \
  C:\Users\sktjs\AppData\Local\Arduino15\packages\arduino\hardware\avr\1.8.6\cores\arduino/Printable.h \
