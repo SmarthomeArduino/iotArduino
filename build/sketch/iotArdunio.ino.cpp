@@ -26,15 +26,6 @@ float temperature = 0;
 float humidity = 0;
 
 
-#line 27 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
-void setup();
-#line 38 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
-void loop();
-#line 160 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
-void setToggle(int PIN, byte& stat);
-#line 172 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
-void moveBlind(int angle);
-#line 27 "C:\\Users\\sktjs\\OneDrive\\바탕 화면\\iotArdunio\\iotArdunio.ino"
 void setup() {
   BTSerial.begin(9600);
   dht.begin();
