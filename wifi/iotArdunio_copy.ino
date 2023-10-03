@@ -6,7 +6,6 @@
 #include "./header/melody.h"
 
 
-SoftwareSerial ESP_wifi(2, 3);  // ESP8266 RX, TX
 DHT dht(dhtPin, DHT11);
 LiquidCrystal_I2C lcd(lcdAddr, 16, 2);
 SoftwareSerial BTSerial(4, 5);
@@ -20,17 +19,13 @@ boolean TV = OFF;
 
 // 현재 LED의 상태를 저장하는 배열. 0일경우 OFF, 1일 경우 ON
 byte sensor[] = {0, 0, 0, 0, 0, 0, 0};
-char buffer[100];
 
 float temperature = 0;
 float humidity = 0;
 
 
 void setup() {
-  // BTSerial.begin(9600);
-  Serial.begin(115200);
-  ESP_wifi.begin(115200);
-  delay(1000);
+  BTSerial.begin(9600);
   dht.begin();
   lcd.init();
   // 모든 LED핀을 출력모드로 설정
@@ -41,44 +36,54 @@ void setup() {
 
 
 void loop() {
-  int index = 0;
-  while (ESP_wifi.available()) {
-    char c = ESP_wifi.read();
-    buffer[index] = c;
-    index++;
-  }
-  buffer[index] = '\0';
+  if (BTSerial.available()) {
+    char input = BTSerial.read();
 
-  
-  if (strstr(buffer, "toggleLED") != NULL) {
-    char originalString[100];
-    strncpy(originalString, buffer, sizeof(buffer));
-    char extractedString[3];
-    char* delimiter = strchr(originalString, ':');
-    if (delimiter != NULL) {
-      strncpy(extractedString, delimiter + 1, sizeof(extractedString) - 1);
-      extractedString[sizeof(extractedString) - 1] = '\0';
-      Serial.print("Extracted String: ");
-      Serial.println(extractedString);
-    } else {
-      Serial.println("Delimiter not found in the original string.");
+    char receivedChar = Serial.read(); // 시리얼로부터 데이터 읽기
+    Serial.print("Received: ");
+    Serial.println(receivedChar);
+
+    switch (input) {
+      case 'r':                          //RGB LED Red
+        setToggle(ledR1, sensor[0]);
+        BTSerial.print("8번 핀 상태: ");
+        BTSerial.println(digitalRead(ledR1));
+        break;
+
+      case 'g':                          //RGB LED Green
+        setToggle(ledG1, sensor[1]);
+        BTSerial.print("9번 핀 상태: ");
+        BTSerial.println(digitalRead(ledG1));
+        break;
+
+      case 'b':                          //RGB LED Blue
+        setToggle(ledB1, sensor[2]);
+        BTSerial.print("10번 핀 상태: ");
+        BTSerial.println(digitalRead(ledB1));
+        break;
+
+      case 'R':                          //RGB LED1 Red
+        setToggle(ledR2, sensor[3]);
+        BTSerial.print("11번 핀 상태: ");
+        BTSerial.println(digitalRead(ledR2));
+        break;
+
+      case 'G':                          //RGB LED1 Green
+        setToggle(ledG2, sensor[4]);
+        BTSerial.print("12번 핀 상태: ");
+        BTSerial.println(digitalRead(ledG2));
+        break;
+
+      case 'B':                          //RGB LED1 Blue
+        setToggle(ledB2, sensor[5]);
+        BTSerial.print("13번 핀 상태: ");
+        BTSerial.println(digitalRead(ledB2));
+        break;
+
+      case 'aircon':                          //aircon LED
+        setToggle(led, sensor[6]);
+        break;
     }
-
-    if (strcmp(extractedString, "R1") == 0) {
-      setToggle(ledR1, sensor[0]);
-    } else if (strcmp(extractedString, "G1") == 0) {
-      setToggle(ledG1, sensor[1]);
-    } else if (strcmp(extractedString, "B1") == 0) {
-      setToggle(ledB1, sensor[2]);
-    } else if (strcmp(extractedString, "R2") == 0) {
-      setToggle(ledR2, sensor[3]);
-    } else if (strcmp(extractedString, "G2") == 0) {
-      setToggle(ledG2, sensor[4]);
-    } else if (strcmp(extractedString, "B2") == 0) {
-      setToggle(ledB2, sensor[5]);
-    }
-
-    Serial.println("Buffer contains 'toggleLED' string!");
   }
 
   //================2초마다 온습도 측정================//
