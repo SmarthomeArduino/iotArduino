@@ -11,7 +11,7 @@
 int ON = 1;
 int OFF = 0;
 
-long interval = 2000;            //온습도 센서값 측정 주기. 2000ms = 2초
+long interval = 10000;            //온습도 센서값 측정 주기. 10초
 int blindOpen = 0;          //서보모터 열렸을 때 각도값 
 int blindClose = 180;         //서보모터 닫혔을 때 각도값(Open일때보다 각도가 커야함)
 int refVal = 500;            //조도센서 기준값.
@@ -23,8 +23,8 @@ int lcdAddr = 0x27;          // I2C LCD 주소. 변경 필수
 //아두이노 핀 세팅//
 int cdsPin = A0;             // 조도센서 핀
 int IRPin = A1;              // 적외선장애물감지센서 핀
-int piezoPin = 3;            // 피에조부저 핀
-int dhtPin = 4;              // 온습도센서 핀
+int piezoPin = 4;            // 피에조부저 핀
+int dhtPin = 5;              // 온습도센서 핀
 int servoPin = 6;            // 서보모터
 int led = 7;                 // LED(가스, 에어컨)
 int airCon = 7;

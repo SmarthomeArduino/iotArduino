@@ -81,9 +81,9 @@ void loop() {
     Serial.println("Buffer contains 'toggleLED' string!");
   }
 
-  //================2초마다 온습도 측정================//
+  //================10초마다 온습도 측정================//
   unsigned long currentMillis = millis();
-  if (currentMillis - previousMillis >= interval) {   //interval(2s)마다 온습도 측정
+  if (currentMillis - previousMillis >= interval) {   //interval(10s)마다 온습도 측정
     previousMillis = currentMillis;
     temperature = dht.readTemperature();
     humidity = dht.readHumidity();
