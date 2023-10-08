@@ -1,13 +1,12 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
 
-const char* ssid = "leesuun";       // 여기에 WiFi 네트워크 이름 입력
-const char* password = "dl116245";  // 여기에 WiFi 비밀번호 입력
-const char* serverIP = "192.168.0.3"; // 톰캣서버 IP주소
-const int serverPort = 9001; // 톰캣서버 PORT
+const char* ssid = "leesuun";          // 여기에 WiFi 네트워크 이름 입력
+const char* password = "dl116245";     // 여기에 WiFi 비밀번호 입력
+const char* serverIP = "192.168.0.3";  // 톰캣서버 IP주소
+const int serverPort = 9001;           // 톰캣서버 PORT
 
-
-
+WiFiClient client;
 
 ESP8266WebServer server(80);
 
@@ -28,22 +27,25 @@ void setup() {
 void loop() {
   // 서버로부터 데이터 수신
   server.handleClient();
+  sendToTomcatHumiTemp();
+}
 
 
+// 온습도 데이터 전달
+void sendToTomcatHumiTemp() {
   // 서버로 데이터 송신
   if (Serial.available() > 0) {
     String data = Serial.readStringUntil('\n');
-    
+
+
+    if (data.indexOf("temp") == -1 || data.indexOf("humi") == -1) return;
+    if (data.indexOf("NAN") != -1) return;
+
     // 톰캣 서버로 데이터 전송
-    WiFiClient client;
     if (client.connect(serverIP, serverPort)) {
       String url = "/iot/smarthome/tempHumi";
-      String request = "POST " + url + " HTTP/1.1\r\n" +
-                       "Host: " + serverIP + "\r\n" +
-                       "Content-Type: application/x-www-form-urlencoded\r\n" +
-                       "Content-Length: " + data.length() + "\r\n\r\n" +
-                       data;
-      // 톰캣 서버로 전송하는 코드	
+      String request = "POST " + url + " HTTP/1.1\r\n" + "Host: " + serverIP + "\r\n" + "Content-Type: application/x-www-form-urlencoded\r\n" + "Content-Length: " + data.length() + "\r\n\r\n" + data;
+      // 톰캣 서버로 전송하는 코드
       client.print(request);
       delay(100);
       while (client.available()) {
@@ -51,17 +53,17 @@ void loop() {
         Serial.print(response);
       }
       client.stop();
-    }else{
+    } else {
       Serial.println("failed connect..");
     }
   }
 }
 
+// LED 제어
 void handleData() {
-  WiFiClient client;
+
   String data = server.arg("plain");
   Serial.println(data);
-  client.print(data);
   delay(100);
   while (client.available()) {
     String response = client.readStringUntil('\r');

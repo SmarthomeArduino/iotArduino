@@ -77,8 +77,6 @@ void loop() {
     } else if (strcmp(extractedString, "B2") == 0) {
       setToggle(ledB2, sensor[5]);
     }
-
-    Serial.println("Buffer contains 'toggleLED' string!");
   }
 
   //================10초마다 온습도 측정================//
@@ -88,21 +86,9 @@ void loop() {
     temperature = dht.readTemperature();
     humidity = dht.readHumidity();
 
-
-/*
-    // 온습도 테스트
-    BTSerial.print("temp: ");
-    BTSerial.print(temperature,1);
-    BTSerial.print(",humi: ");
-    BTSerial.print(humidity,0);
-    BTSerial.println();  // 개행 문자로 데이터를 종료
-    BTSerial.print("cds: ");
-    BTSerial.print(analogRead(cdsPin));
-    BTSerial.print(", IR: ");
-    BTSerial.print(analogRead(IRPin));
-    BTSerial.println();  // 개행 문자로 데이터를 종료
-*/
-
+    String output = "{\"temp\":\"" + String(temperature, 2) + "\",\"humi\":\"" + String(humidity, 2) + "\"}";
+    ESP_wifi.println(output);
+    
     if (TV == ON) {                                  //TV가 ON상태이면 온습도 값 갱신
       lcd.setCursor(0, 0);
       lcd.print("Temp : ");
@@ -147,9 +133,6 @@ void loop() {
   }
   //================TV 제어 끝================//
 }
-
-
-
 
 //LED 토글함수
 void setToggle(int PIN, byte& stat) {
